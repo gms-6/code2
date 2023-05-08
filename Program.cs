@@ -9,6 +9,9 @@ namespace code22
 {
     class Program
     {
+        static int M = 0;
+        static int min = int.MaxValue;
+        
         static void Main(string[] args)
         {
             # region 人数最多的站点
@@ -57,11 +60,34 @@ namespace code22
             //    Console.WriteLine(num);
             #endregion
 
-
-
-
+            string[] str=Console.ReadLine().Split(' ');
+            M = Convert.ToInt32(Console.ReadLine());
+            int[] nums= new int[str.Length];
+            for(int i=0;i< str.Length; ++i)
+            {
+                nums[i] = Convert.ToInt32(str[i]);
+                if (nums[i] < min)
+                    min = nums[i];
+            }
+            int count=newArray(nums, 0, 0, 0);
+            Console.WriteLine(count);
             Console.ReadKey();
         }
+        public static int newArray(int[] nums,int index,int sum,int count)
+        {
+            if (sum > M)
+            {
+                return count;
+            }
+            if (sum < M && M - sum < min)
+                return count + 1;
+            for (int i=index;i<nums.Length;++i)
+            {
+                count=newArray(nums, i, sum + nums[i],count);
+            }
+            return count;
+        }
+
 
         public void SelectionSort(int[] nums)
         {
