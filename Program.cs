@@ -11,9 +11,6 @@ namespace code22
     {
         static void Main(string[] args)
         {
-
-
-
             # region 人数最多的站点
             //int count = Convert.ToInt32(Console.ReadLine());
             //int[,] platform = new int[count, 2];
@@ -59,6 +56,7 @@ namespace code22
             //else
             //    Console.WriteLine(num);
             #endregion
+
 
 
 
