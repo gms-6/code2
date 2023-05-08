@@ -11,53 +11,57 @@ namespace code22
     {
         static void Main(string[] args)
         {
-            int count = Convert.ToInt32(Console.ReadLine());
-            int[,] platform = new int[count, 2];
-            int far = 0;
-            int max = 0;
-            int num = -1;
-            for(int i=0;i< count;++i)
-            {
-                string[] pla = Console.ReadLine().Split(' ');
-                int a = Convert.ToInt32(pla[0]);
-                int b = Convert.ToInt32(pla[1]);
-                if(a>b)
-                {
-                    platform[i, 0] = b;
-                    platform[i, 1] = a+4;
-                    if(a+4>far)
-                        far = a+4;
-                }
-                else
-                {
-                    platform[i, 0] = a;
-                    platform[i, 1] = b;
-                    if (b > far)
-                        far = b;
-                }
-            }
-            for(int i=1;i<=far;++i)
-            {
-                int sum = 0;
-                for(int j=0;j<count;++j)
-                {
-                    if (i >= platform[j, 0] && i < platform[j,1])
-                        sum++;
-                }
-                if (sum > max)
-                {
-                    max = sum;
-                    num = i;
-                }
-            }
-            if (num > 4)
-                Console.WriteLine(num - 4);
-            else
-                Console.WriteLine(num);
 
 
 
-            
+            # region 人数最多的站点
+            //int count = Convert.ToInt32(Console.ReadLine());
+            //int[,] platform = new int[count, 2];
+            //int far = 0;
+            //int max = 0;
+            //int num = -1;
+            //for(int i=0;i< count;++i)
+            //{
+            //    string[] pla = Console.ReadLine().Split(' ');
+            //    int a = Convert.ToInt32(pla[0]);
+            //    int b = Convert.ToInt32(pla[1]);
+            //    if(a>b)
+            //    {
+            //        platform[i, 0] = b;
+            //        platform[i, 1] = a+4;
+            //        if(a+4>far)
+            //            far = a+4;
+            //    }
+            //    else
+            //    {
+            //        platform[i, 0] = a;
+            //        platform[i, 1] = b;
+            //        if (b > far)
+            //            far = b;
+            //    }
+            //}
+            //for(int i=1;i<=far;++i)
+            //{
+            //    int sum = 0;
+            //    for(int j=0;j<count;++j)
+            //    {
+            //        if (i >= platform[j, 0] && i < platform[j,1])
+            //            sum++;
+            //    }
+            //    if (sum > max)
+            //    {
+            //        max = sum;
+            //        num = i;
+            //    }
+            //}
+            //if (num > 4)
+            //    Console.WriteLine(num - 4);
+            //else
+            //    Console.WriteLine(num);
+            #endregion
+
+
+
             Console.ReadKey();
         }
 
