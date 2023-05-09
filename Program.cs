@@ -1,4 +1,5 @@
-﻿using code22.NewFolder1;
+﻿using code22.Model;
+using code22.NewFolder1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace code22
         
         static void Main(string[] args)
         {
-            # region 人数最多的站点
+            #region 人数最多的站点
             //int count = Convert.ToInt32(Console.ReadLine());
             //int[,] platform = new int[count, 2];
             //int far = 0;
@@ -60,19 +61,35 @@ namespace code22
             //    Console.WriteLine(num);
             #endregion
 
-            string[] str=Console.ReadLine().Split(' ');
-            M = Convert.ToInt32(Console.ReadLine());
-            int[] nums= new int[str.Length];
-            for(int i=0;i< str.Length; ++i)
-            {
-                nums[i] = Convert.ToInt32(str[i]);
-                if (nums[i] < min)
-                    min = nums[i];
-            }
-            int count=newArray(nums, 0, 0, 0);
-            Console.WriteLine(count);
+            #region 
+            //string[] str=Console.ReadLine().Split(' ');
+            //M = Convert.ToInt32(Console.ReadLine());
+            //int[] nums= new int[str.Length];
+            //for(int i=0;i< str.Length; ++i)
+            //{
+            //    nums[i] = Convert.ToInt32(str[i]);
+            //    if (nums[i] < min)
+            //        min = nums[i];
+            //}
+            //int count=newArray(nums, 0, 0, 0);
+            //Console.WriteLine(count);
+            #endregion
+            Heap heap = new Heap();
+            int[] nums = { 4,26,7,1,3,9,5,2,7,5};
+            heap.CreatSmallHeapDown(nums);   //O(n)
+            var a= heap.HeapSort(nums);       //O(N)
+            Show(a);
+
+
             Console.ReadKey();
         }
+
+        //public static void Show(int[] nums)
+        //{
+        //    int n= nums.Length; 
+        //    for(int i=0;i<n;i++)
+        //        Console.WriteLine(nums[i]);
+        //}
         public static int newArray(int[] nums,int index,int sum,int count)
         {
             if (sum > M)
@@ -245,7 +262,7 @@ namespace code22
                 }
             }
         }
-        public void Show(int[] nums)
+        public static void Show(int[] nums)
         {
             foreach (int num in nums)
             {

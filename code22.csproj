@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ListNode.cs" />
+    <Compile Include="Model\Heap.cs" />
     <Compile Include="Model\Trie.cs" />
     <Compile Include="Model\WordDictionary.cs" />
     <Compile Include="NewFolder1\test.cs" />
