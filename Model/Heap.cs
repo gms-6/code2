@@ -64,8 +64,8 @@ namespace code22.Model
             while(n>0)
             {
                 target[n] = nums[0];
-                nums[0] = nums[n - 1];
-                Down(nums,n--,0);
+                nums[0] = nums[n];
+                Down(nums,--n,0);
             }
             target[0] = nums[0];
             return target;

@@ -77,9 +77,10 @@ namespace code22
             Heap heap = new Heap();
             int[] nums = { 4,26,7,1,3,9,5,2,7,5};
             heap.CreatSmallHeapDown(nums);   //O(n)
-            var a= heap.HeapSort(nums);       //O(N)
+            var a = heap.HeapSort(nums);       //O(N)
             Show(a);
-
+            //Array.Sort(nums);
+            //Show(nums);
 
             Console.ReadKey();
         }
